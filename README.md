@@ -1,7 +1,8 @@
 ## Project 1: Surfer Trivia Game
 
 ### Description
-
+Image Placeholder
+![Catch a wave!](link goes here)
 ### Design Process
 
 #### Getting Started
@@ -16,8 +17,10 @@ I sketched mockups by hand using a paper pad with an iPhone template.
 Then, I created mockups using Adobe XD where I added more details, including a home page and future improvements to the Question page.
 ![XD mockups](.images/XD_Mockups.png)
 
-Image Placeholder
-![Catch a wave!](link goes here)
+#### Prototypes
+
+Low fidelity prototype: [Low-Fidelity](https://xd.adobe.com/view/83474e16-2e69-4ae0-5a98-d1051f513d9e-f576/)
+
 
 ### Current Features
 
