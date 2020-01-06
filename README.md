@@ -14,7 +14,7 @@ I created a Trello board for the project to capture tasks, requirements, **user 
 #### Mockups
 
 I sketched mockups by hand using a paper pad with an iPhone template.
-![Hand-sketched mockups](/images/IMG_6314.JPG)
+![Hand-sketched mockups](/images/IMG_6314.jpg)
 
 Then, I created mockups using Adobe XD where I added more details, including a home page and future improvements to the Question page.
 ![XD mockups](/images/XD_Mockups.png)
