@@ -20,7 +20,6 @@ const questionList = [
     answerC: 'Istanbul, Turkey'
   }
 ];
-
 //select Let's Play button
 const letsPlayButton = document.querySelector('.letsPlay');
 console.log(letsPlayButton);
@@ -37,8 +36,20 @@ function handleLetsPlayButton() {
     questionList[currentQuestion].question;
 
   //create element button with for loop
+  //   var questionButton = document.createElement('button');
+  //   let (i=0; i<answerList1.length; i++);
+  //   //questionButton.innerHTML = answerList[currentQuestion]
+  //   document.body.appendChild(questionButton);
 
-  //populate button with innerHTML for answerA
+  var buttonA = document.createElement('button');
+  buttonA.innerHTML = questionList[currentQuestion].answerA;
+  document.body.appendChild(buttonA);
+
+  var buttonB = document.createElement('button');
+  buttonB.innerHTML = questionList[currentQuestion].answerB;
+  document.body.appendChild(buttonB);
+
+  var buttonC = document.createElement('button');
+  buttonC.innerHTML = questionList[currentQuestion].answerC;
+  document.body.appendChild(buttonC);
 }
-
-//GRAB LIST OF ANSWERS FOR QUESTION
