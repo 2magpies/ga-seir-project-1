@@ -4,13 +4,21 @@ Questions for office hours:
 */
 
 .name {
-  font-family: 'Original Surfer', cursive;
 }
 
 .tagLine {
-
 }
 
 .instructions {
+}
 
+.letsPlay {
+  
+}
+
+.question {
+}
+
+body {
+  font-family: 'Original Surfer', cursive;
 }
