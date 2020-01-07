@@ -46,26 +46,58 @@ function handleLetsPlayButton() {
   //   document.body.appendChild(questionButton);
 
   //or, create element buttons individually
-  var buttonA = document.createElement('button');
+  const buttonA = document.createElement('button');
   buttonA.innerHTML = questionList[currentQuestion].answerA;
   document.body.appendChild(buttonA);
 
-  var buttonB = document.createElement('button');
+  // create event listener for buttonA
+  buttonA.addEventListener('click', checkAnswer);
+
+  const buttonB = document.createElement('button');
   buttonB.innerHTML = questionList[currentQuestion].answerB;
   document.body.appendChild(buttonB);
+  buttonB.addEventListener('click', checkAnswer);
 
-  var buttonC = document.createElement('button');
+  const buttonC = document.createElement('button');
   buttonC.innerHTML = questionList[currentQuestion].answerC;
   document.body.appendChild(buttonC);
+  buttonC.addEventListener('click', checkAnswer);
 }
 
 //CREATE LOGIC TO HANDLE ANSWER
 
-// create function to check if answer is correct: innerHTML of clicked button === correctAnswer?
+// create function to check if answer is correct: innerHTML of clicked button === correctAnswer
+function checkAnswer(event) {
+  console.log(event.target.innerText);
+  const correctAnswerParagraph = document.createElement('p');
+  correctAnswerParagraph.innerText = 'Awesome! Way to rip!';
+  document.body.appendChild(correctAnswerParagraph);
+
+  if (event.target.innerText === questionList.correctAnswer) {
+    return correctAnswerParagraph;
+  } else {
+    return 'nope';
+  }
+}
+
+//alternative approach to create function to check answer based on MDN re: decision-making
+// const answerParagraph = document.querySelector('p');
+
+// function checkAnswer(event) {
+//   const paragraphChoice = event.target.innerText;
+
+//   if (paragraphChoice === questionList.correctAnswer) {
+//     answerParagraph.textContent = 'Awesome! Way to rip!';
+//   } else {
+//     answerParagraph.textContent = 'Wipe out! Sorry, brau.';
+//   }
+// }
 
 // create correct answer paragraph
-var correctAnswerParagraph = document.createElement('p');
-correctAnswerParagraph.innerText = 'Awesome! Way to rip!';
+// var correctAnswerParagraph = document.createElement('p');
+// correctAnswerParagraph.innerText = 'Awesome! Way to rip!';
+// document.body.appendChild(correctAnswerParagraph);
 // create incorrect answer paragraph
-var incorrectAnswerParagraph = document.createElement('p');
-incorrectAnswerParagraph.innerText = 'Wipe out! Sorry, brau.';
+// var incorrectAnswerParagraph = document.createElement('p');
+// incorrectAnswerParagraph.innerText = 'Wipe out! Sorry, brau.';
+// document.body.appendChild(incorrectAnswerParagraph);
