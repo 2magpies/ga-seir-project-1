@@ -67,3 +67,5 @@ function handleLetsPlayButton() {
 var correctAnswerParagraph = document.createElement('p');
 correctAnswerParagraph.innerText = 'Awesome! Way to rip!';
 // create incorrect answer paragraph
+var incorrectAnswerParagraph = document.createElement('p');
+incorrectAnswerParagraph.innerText = 'Wipe out! Sorry, brau.';
