@@ -5,12 +5,7 @@ console.log('warm and fuzzy feelings');
 
 //GRAB A QUESTION FROM ARRAY
 
-// create question array
-// const questionList = [
-//   'Where was Duke Kahanamoku born?',
-//   'Who was the first professional female surfer?',
-//   'What is the minimum length for a longboard?'
-// ];
+let currentQuestion = 0;
 
 const questionList = [
   {
@@ -31,7 +26,7 @@ letsPlayButton.addEventListener('click', handleLetsPlayButton);
 //create callback function for lets play button
 function handleLetsPlayButton() {
   //add question counter to track question
-  var currentQuestion = 0;
+
   //return a question
   document.querySelector('.question').innerHTML =
     questionList[currentQuestion].question;
@@ -69,35 +64,14 @@ function handleLetsPlayButton() {
 // create function to check if answer is correct: innerHTML of clicked button === correctAnswer
 function checkAnswer(event) {
   console.log(event.target.innerText);
-  const correctAnswerParagraph = document.createElement('p');
-  correctAnswerParagraph.innerText = 'Awesome! Way to rip!';
-  document.body.appendChild(correctAnswerParagraph);
+  const answerParagraph = document.createElement('p');
 
-  if (event.target.innerText === questionList.correctAnswer) {
-    return correctAnswerParagraph;
+  document.body.appendChild(answerParagraph);
+
+  if (event.target.innerText === questionList[currentQuestion].correctAnswer) {
+    answerParagraph.innerText = 'Awesome! Way to rip!';
   } else {
-    return 'nope';
+    answerParagraph.innerText = 'Wipe out! Sorry, brau.';
   }
 }
-
-//alternative approach to create function to check answer based on MDN re: decision-making
-// const answerParagraph = document.querySelector('p');
-
-// function checkAnswer(event) {
-//   const paragraphChoice = event.target.innerText;
-
-//   if (paragraphChoice === questionList.correctAnswer) {
-//     answerParagraph.textContent = 'Awesome! Way to rip!';
-//   } else {
-//     answerParagraph.textContent = 'Wipe out! Sorry, brau.';
-//   }
-// }
-
-// create correct answer paragraph
-// var correctAnswerParagraph = document.createElement('p');
-// correctAnswerParagraph.innerText = 'Awesome! Way to rip!';
-// document.body.appendChild(correctAnswerParagraph);
-// create incorrect answer paragraph
-// var incorrectAnswerParagraph = document.createElement('p');
-// incorrectAnswerParagraph.innerText = 'Wipe out! Sorry, brau.';
-// document.body.appendChild(incorrectAnswerParagraph);
+console.log(questionList[currentQuestion].correctAnswer);
