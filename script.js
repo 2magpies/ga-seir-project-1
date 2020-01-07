@@ -1,7 +1,7 @@
 // Add something to console for warm and fuzzy feeling
 console.log('warm and fuzzy feelings');
 
-//Referred to w3schools, MDN, labs, and homework
+//Referred to w3schools, MDN, labs, homework, GA SEIR 129 cohort teachers
 
 //GRAB A QUESTION FROM ARRAY
 
@@ -15,9 +15,10 @@ console.log('warm and fuzzy feelings');
 const questionList = [
   {
     question: 'Where was Duke Kahanamoku born?',
-    answerA: 'Honolu, HI',
+    answerA: 'Honolulu, HI',
     answerB: 'Los Angles, CA',
-    answerC: 'Istanbul, Turkey'
+    answerC: 'Istanbul, Turkey',
+    correctAnswer: 'Honolulu, HI'
   }
 ];
 //select Let's Play button
@@ -37,10 +38,14 @@ function handleLetsPlayButton() {
 
   //create element button with for loop
   //   var questionButton = document.createElement('button');
-  //   let (i=0; i<answerList1.length; i++);
-  //   //questionButton.innerHTML = answerList[currentQuestion]
+  //   var i;
+  //   for (i = 0; i < questionList.length; i++);
+  //   {
+  //     questionButton.innerHTML = questionList[currentQuestion].i;
+  //   }
   //   document.body.appendChild(questionButton);
 
+  //or, create element buttons individually
   var buttonA = document.createElement('button');
   buttonA.innerHTML = questionList[currentQuestion].answerA;
   document.body.appendChild(buttonA);
@@ -53,3 +58,12 @@ function handleLetsPlayButton() {
   buttonC.innerHTML = questionList[currentQuestion].answerC;
   document.body.appendChild(buttonC);
 }
+
+//CREATE LOGIC TO HANDLE ANSWER
+
+// create function to check if answer is correct: innerHTML of clicked button === correctAnswer?
+
+// create correct answer paragraph
+var correctAnswerParagraph = document.createElement('p');
+correctAnswerParagraph.innerText = 'Awesome! Way to rip!';
+// create incorrect answer paragraph
