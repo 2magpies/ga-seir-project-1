@@ -6,6 +6,7 @@ console.log('warm and fuzzy feelings');
 //GRAB A QUESTION FROM ARRAY
 
 let currentQuestion = 0;
+const score = { rips: 0, wipeouts: 0 };
 
 const questionList = [
   {
@@ -14,6 +15,42 @@ const questionList = [
     answerB: 'Los Angles, CA',
     answerC: 'Istanbul, Turkey',
     correctAnswer: 'Honolulu, HI'
+  },
+  {
+    question: 'Who was the first woman to win a surf competition?',
+    answerA: 'Kelly Slater',
+    answerB: 'Margo Oberg',
+    answerC: "Phyllis O'Donnell",
+    correctAnswer: 'Margo Oberg'
+  },
+  {
+    question: 'What is the minimum length of a longboard?',
+    answerA: '8 feet',
+    answerB: '8.5 feet',
+    answerC: '9 feet',
+    correctAnswer: '9 feet'
+  },
+  {
+    question:
+      'Where did mystery writer Agatha Christie learn to surf standing up?',
+    answerA: 'Waikiki Beach , HI',
+    answerB: 'Muizenberg Beach,South Africa',
+    answerC: 'Cornwall, England',
+    correctAnswer: 'Waikiki Beach , HI'
+  },
+  {
+    question: 'Who was the first surfer to ride Pipeline?',
+    answerA: 'Greg Noll',
+    answerB: 'Dale Velzy',
+    answerC: 'Phil Edwards',
+    correctAnswer: 'Greg Noll'
+  },
+  {
+    question: 'What school offers a degree in Surf Science and Technology?',
+    answerA: 'Griffith University (Australia)',
+    answerB: 'John Hopkins University (USA)',
+    answerC: 'Plymouth University (UK)',
+    correctAnswer: 'Greg Noll'
   }
 ];
 //select Let's Play button
@@ -31,16 +68,7 @@ function handleLetsPlayButton() {
   document.querySelector('.question').innerHTML =
     questionList[currentQuestion].question;
 
-  //create element button with for loop
-  //   var questionButton = document.createElement('button');
-  //   var i;
-  //   for (i = 0; i < questionList.length; i++);
-  //   {
-  //     questionButton.innerHTML = questionList[currentQuestion].i;
-  //   }
-  //   document.body.appendChild(questionButton);
-
-  //or, create element buttons individually
+  //create element buttons individually
   const buttonA = document.createElement('button');
   buttonA.innerHTML = questionList[currentQuestion].answerA;
   document.body.appendChild(buttonA);
@@ -71,7 +99,7 @@ function checkAnswer(event) {
   if (event.target.innerText === questionList[currentQuestion].correctAnswer) {
     answerParagraph.innerText = 'Awesome! Way to rip!';
   } else {
-    answerParagraph.innerText = 'Wipe out! Sorry, brau.';
+    answerParagraph.innerText = 'Wipe out! Sorry, braugh.';
   }
 }
 console.log(questionList[currentQuestion].correctAnswer);
