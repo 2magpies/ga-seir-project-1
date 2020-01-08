@@ -6,6 +6,7 @@ console.log('warm and fuzzy feelings');
 //GRAB A QUESTION FROM ARRAY
 
 let currentQuestion = 0;
+let isQuestionAnswered = false;
 const score = { rips: 0, wipeouts: 0 };
 
 const questionList = [
@@ -90,16 +91,22 @@ function handleLetsPlayButton() {
 //CREATE LOGIC TO HANDLE ANSWER
 
 // create function to check if answer is correct: innerHTML of clicked button === correctAnswer
+
 function checkAnswer(event) {
-  console.log(event.target.innerText);
-  const answerParagraph = document.createElement('p');
+  if (isQuestionAnswered === false) {
+    isQuestionAnswered = true;
+    console.log(event.target.innerText);
+    const answerParagraph = document.createElement('p');
 
-  document.body.appendChild(answerParagraph);
+    document.body.appendChild(answerParagraph);
 
-  if (event.target.innerText === questionList[currentQuestion].correctAnswer) {
-    answerParagraph.innerText = 'Awesome! Way to rip!';
-  } else {
-    answerParagraph.innerText = 'Wipe out! Sorry, braugh.';
+    if (
+      event.target.innerText === questionList[currentQuestion].correctAnswer
+    ) {
+      answerParagraph.innerText = 'Awesome! Way to rip!';
+    } else {
+      answerParagraph.innerText = 'Wipe out! Sorry, braugh.';
+    }
   }
 }
 console.log(questionList[currentQuestion].correctAnswer);

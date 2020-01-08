@@ -50,19 +50,20 @@ const questionList = [
   }
 ];
 console.log(questionList.correctAnswer[2]);
-//create an empty array to count number of correct answers and number of incorrect answers
-const score = { rips: 0, wipeouts: 0 };
 
 //add an object to identify a question when it is invoked (currentQuestion)
 const currentQuestion = 0;
 
-//add function to define the behaviour of the Let's Play button in the html (letsPlay)
+//create an empty array to count number of correct answers and number of incorrect answers
+const score = { rips: 0, wipeouts: 0 };
+
+//add function to define the behaviour of the Let's Play button
 
 //get the question in the questions array
 
 //get the image hint
 
-//add function to let's play button to create 3 answer buttons
+//create 3 answer buttons
 
 //insert the possible answers a, b, and c into the answer buttons
 
@@ -86,3 +87,5 @@ score.wipeouts += 1;
 //add function to increment current question value then run the letsPlay function
 
 //if a user answers all question, display an end of trivia message
+
+//add link to other games
