@@ -7,7 +7,18 @@ console.log('warm and fuzzy feelings');
 
 let currentQuestion = 0;
 let isQuestionAnswered = false;
-const score = { rips: 0, wipeouts: 0 };
+let score = { rips: 0, wipeouts: 0 };
+const answerParagraph = document.createElement('p');
+const nextButton = document.createElement('button');
+nextButton.innerText = 'Paddle Out';
+
+// const scoreKeeperRips = document.createElement('label');
+// scoreKeeperRips.innerHTML = 'Rips' + ' ' + score.rips;
+// document.body.appendChild(scoreKeeperRips);
+
+// const scoreKeeperWipeouts = document.createElement('label');
+// scoreKeeperWipeouts.innerHTML = 'Wipeouts' + ' ' + score.wipeouts;
+// document.body.appendChild(scoreKeeperWipeouts);
 
 const questionList = [
   {
@@ -63,13 +74,11 @@ letsPlayButton.addEventListener('click', handleLetsPlayButton);
 
 //create callback function for lets play button
 function handleLetsPlayButton() {
-  //add question counter to track question
-
   //return a question
   document.querySelector('.question').innerHTML =
     questionList[currentQuestion].question;
 
-  //create element buttons individually
+  // create element buttons individually
   const buttonA = document.createElement('button');
   buttonA.innerHTML = questionList[currentQuestion].answerA;
   document.body.appendChild(buttonA);
@@ -96,16 +105,34 @@ function checkAnswer(event) {
   if (isQuestionAnswered === false) {
     isQuestionAnswered = true;
     console.log(event.target.innerText);
-    const answerParagraph = document.createElement('p');
     document.body.appendChild(answerParagraph);
+    document.body.appendChild(nextButton);
 
     if (
       event.target.innerText === questionList[currentQuestion].correctAnswer
     ) {
       answerParagraph.innerText = 'Awesome! Way to rip!';
+      //update object for counting correct answers
+      score.rips += 1;
     } else {
-      answerParagraph.innerText = 'Wipe out! Sorry, braugh.';
+      answerParagraph.innerText =
+        'Wipe out! Sorry, braugh. Correct answer is ' +
+        questionList[currentQuestion].correctAnswer +
+        '.';
+      //update object for counting correct answers
+      score.wipeouts += 1;
     }
   }
 }
 console.log(questionList[currentQuestion].correctAnswer);
+
+//add event listener to paddle out button
+nextButton.addEventListener('click', handleNextButton);
+
+//create callback function for lets play button
+function handleNextButton() {
+  isQuestionAnswered = false;
+  //increment currentQuestion value
+  currentQuestion += 1;
+  handleLetsPlayButton();
+}

@@ -2,7 +2,22 @@
 Questions for office hours:
 1. ...?
 */
+.score {
+  font-size: 10pt;
+  color: crimson;
+}
 
+.rips {
+  color: blue;
+  flex-direction: column;
+  float: left;
+}
+
+.wipeouts {
+  color: orchid;
+  flex-direction: column;
+  float: right;
+}
 .letsPlay {
 }
 
