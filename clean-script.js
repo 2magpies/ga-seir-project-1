@@ -1,9 +1,17 @@
-// create an array (questionList) of 6 question objects that include
-// a question,
-//3 answers,
-//an image source for a hint,
-//the correct answer
+//add an object to identify a question when it is invoked (currentQuestion)
+let currentQuestion = 0;
 
+//add object to indicate that an answer button has been clicked
+let isQuestionAnswered = false;
+
+//add object to track number of correct answers and number of incorrect answers
+let score = { rips: 0, wipeouts: 0 };
+
+const letsPlayButton = document.querySelector('.letsPlay');
+console.log(letsPlayButton);
+
+// create an array (questionList) of question objects that include a question, 3 answers, the correct answer
+//an image source for a hint,
 const questionList = [
   {
     question: 'Where was Duke Kahanamoku born?',
@@ -51,40 +59,71 @@ const questionList = [
 ];
 console.log(questionList.correctAnswer[2]);
 
-//add an object to identify a question when it is invoked (currentQuestion)
-const currentQuestion = 0;
+//add event listener to lets play button
+letsPlayButton.addEventListener('click', handleLetsPlayButton);
 
-//create an empty array to count number of correct answers and number of incorrect answers
-const score = { rips: 0, wipeouts: 0 };
+//add callback function for lets play button
+function handleLetsPlayButton() {
+  //create question element
+  document.querySelector('.question').innerHTML =
+    questionList[currentQuestion].question;
 
-//add function to define the behaviour of the Let's Play button
+  //get the image hint
 
-//get the question in the questions array
+  //create 3 answer buttons
+  const buttonA = document.createElement('button');
+  buttonA.innerHTML = questionList[currentQuestion].answerA;
+  document.body.appendChild(buttonA);
 
-//get the image hint
+  const buttonB = document.createElement('button');
+  buttonB.innerHTML = questionList[currentQuestion].answerB;
+  document.body.appendChild(buttonB);
 
-//create 3 answer buttons
+  const buttonC = document.createElement('button');
+  buttonC.innerHTML = questionList[currentQuestion].answerC;
+  document.body.appendChild(buttonC);
 
-//insert the possible answers a, b, and c into the answer buttons
-
+  //add event listeners to buttons
+  buttonA.addEventListener('click', checkAnswer);
+  buttonB.addEventListener('click', checkAnswer);
+  buttonC.addEventListener('click', checkAnswer);
+}
 //add function to check answer when user clicks an answer button
+function checkAnswer(event) {
+  //check isQuestionAnswered
+  if (isQuestionAnswered === false) {
+    //set isQuestionAnswered to true
+    isQuestionAnswered = true;
+    //check event.target text
+    console.log(event.target.innerText);
+    //create object for results paragraph  
+    const answerParagraph = document.createElement('p');
+    document.body.appendChild(answerParagraph);
+    //add result for correct answer
+    if (
+      event.target.innerText === questionList[currentQuestion].correctAnswer
+    ) {
+      answerParagraph.innerText = 'Awesome! Way to rip!';
 
-//add response to correct answer
+      //update object for counting correct answers
+      score.rips += 1;
+    } else {
+      //add result for incorrect answer
+      answerParagraph.innerText = 'Wipe out! Sorry, braugh.';
+      //update object for counting correct answers
+      score.wipeouts += 1;
+    }
+  }
+}
+console.log(questionList[currentQuestion].correctAnswer);
 
-//add response to incorrect answer
-
-//update array for counting correct and incorrect answers
-
-//display number of correct answers
-score.rips += 1;
-//display number of incorrect answers
-score.wipeouts += 1;
+//display score
 
 //prompt user to try another question
 
-//provide option to quit
-
 //add function to increment current question value then run the letsPlay function
+
+//provide option to quit
 
 //if a user answers all question, display an end of trivia message
 

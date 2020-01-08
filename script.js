@@ -97,7 +97,6 @@ function checkAnswer(event) {
     isQuestionAnswered = true;
     console.log(event.target.innerText);
     const answerParagraph = document.createElement('p');
-
     document.body.appendChild(answerParagraph);
 
     if (
