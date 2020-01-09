@@ -23,15 +23,35 @@ Then, I created mockups using Adobe XD where I added more details, including a h
 
 Low fidelity prototype: [Low-Fidelity](https://xd.adobe.com/view/83474e16-2e69-4ae0-5a98-d1051f513d9e-f576/)
 
-I created html (index), css, and js files in my project directory. The html houses minimal elements as most of the content will be called by user actions.  
-Next, I started writing pseudo code in the js file.  
-Once I had the pseudo code to display a question and 3 possible answers, I started writing js code. The expected behavior is very similar to the Dougie lab, so I used that as my model. I
+#### Coding Journal
 
-I decided to code what I had so far versus finishing the pseudo code for the entire project. This turned out to be a poor idea. My advisor, Jen, suggested I start with "clean sheet" and write out everything in pseudo code; then, bring over the code from the initial file that I want to keep intact. To do this, I created a new js file (clean-script.js). I can see the benefits already!
+I created html (index), css, and js files in my project directory. The html houses minimal elements as most of the content will be called by user actions.
+
+Next, I started writing pseudo code in the js file.
+
+Once I had the pseudo code to display a question and 3 possible answers, I started writing js code. The expected behavior is very similar to the Pokemon and Dougie labs, so I used those as my models. The main difference I had to address is that I do not retrieve data from an API.
+
+I tried various approaches to organizing the question-answer data (1 question, 3 possible answers, 1 correct answer. Also, I want to include a hint in the form of an image, but that will probably not happen until the silver version.)
+Each approach had advantages and disadvantages. I was concerned that if I created separate objects by type of data (a question object, an answer object, et al), keeping the data matched properly would become a nightmare as I increase the number of questions. I decided to create an object called _questionList_ to house the question, three possible answers, and identify the correct answer. Hou, Jen, Jared, and Esin have each helped me build and update the _questionList_ object as my code went from supporting one question to multiple questions. (BTW, I'm up to six questions now, and one lesson learned is that testing would be much simpler if I only had two or three.)
+
+Coding for the **Let's Play** button was my next challenge. Lessons and labs on manipulating the DOM and adding event listeners provided the guidance I needed to select the button and identify the first function I needed: **handleLetsPlayButton**.
+
+I wanted the **handleLetsPlayButton** function to get a question and the three possible answers. Getting the question when I only had one in my object was simple. Later, when I wanted to call the next question, I needed help
+
+To create the answer buttons, I figured out how to get the desired behavior working if I wrote separate code for each answer to create the button element, add the innerText, and append it to the body. I really wanted to write one block of code that would handle all three possible answers. Hou advised me to use what works now and I could refactor it later to make it more elegant.
+
+Jumping in and coding once I had the pseudo code written for just the Let's Play button turned out to be a poor idea. When something was done, I wasn't clear on what's next. Jen suggested I start with "clean sheet" and write out everything in pseudo code; then, bring over the code from the initial file that I want to keep intact. To do this, I created a new js file (clean-script.js). This really helped me focus on happy path code.  
+My testing revealed some ugly behaviors, but since I had all of the initial requirements done, I could tell if my improvements broke anything.
+
+#### Lessons Learned
+
+Not all of my challenges were code related. Here's a short list of other helpful experiences from this project:
 
 ### Current Features
 
 ### Technologies Used
+
+HTML, CSS, Javascript
 
 ### Installation Instructions
 
