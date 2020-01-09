@@ -8,23 +8,24 @@ console.log('warm and fuzzy feelings');
 let currentQuestion = 0;
 let isQuestionAnswered = false;
 let score = { rips: 0, wipeouts: 0 };
+let scoreKeeperRips = document.createElement('p');
+scoreKeeperRips.innerHTML = 'Rips: ' + score.rips;
+
+const buttonA = document.createElement('button');
+const buttonB = document.createElement('button');
+const buttonC = document.createElement('button');
 const answerParagraph = document.createElement('p');
 const nextButton = document.createElement('button');
 nextButton.innerText = 'Paddle Out';
 
-// const scoreKeeperRips = document.createElement('label');
-// scoreKeeperRips.innerHTML = 'Rips' + ' ' + score.rips;
-// document.body.appendChild(scoreKeeperRips);
-
-// const scoreKeeperWipeouts = document.createElement('label');
-// scoreKeeperWipeouts.innerHTML = 'Wipeouts' + ' ' + score.wipeouts;
-// document.body.appendChild(scoreKeeperWipeouts);
+const thanksForPlaying = document.createElement('p');
+thanksForPlaying.innerText = 'Thanks for playing!';
 
 const questionList = [
   {
     question: 'Where was Duke Kahanamoku born?',
     answerA: 'Honolulu, HI',
-    answerB: 'Los Angles, CA',
+    answerB: 'Los Angeles, CA',
     answerC: 'Istanbul, Turkey',
     correctAnswer: 'Honolulu, HI'
   },
@@ -77,21 +78,20 @@ function handleLetsPlayButton() {
   //return a question
   document.querySelector('.question').innerHTML =
     questionList[currentQuestion].question;
+  // var questionItem = document.createElement('p');
+  // questionItem.innerHTML = questionList[currentQuestion].question;
+  // document.body.appendChild(questionItem);
 
-  // create element buttons individually
-  const buttonA = document.createElement('button');
+  // add element buttons and event listener fo each answer
+
   buttonA.innerHTML = questionList[currentQuestion].answerA;
   document.body.appendChild(buttonA);
-
-  // create event listener for buttonA
   buttonA.addEventListener('click', checkAnswer);
 
-  const buttonB = document.createElement('button');
   buttonB.innerHTML = questionList[currentQuestion].answerB;
   document.body.appendChild(buttonB);
   buttonB.addEventListener('click', checkAnswer);
 
-  const buttonC = document.createElement('button');
   buttonC.innerHTML = questionList[currentQuestion].answerC;
   document.body.appendChild(buttonC);
   buttonC.addEventListener('click', checkAnswer);
@@ -114,6 +114,7 @@ function checkAnswer(event) {
       answerParagraph.innerText = 'Awesome! Way to rip!';
       //update object for counting correct answers
       score.rips += 1;
+      //document.body.appendChild(scoreKeeperRips);
     } else {
       answerParagraph.innerText =
         'Wipe out! Sorry, braugh. Correct answer is ' +
@@ -123,7 +124,9 @@ function checkAnswer(event) {
       score.wipeouts += 1;
     }
   }
+  console.log(score);
 }
+
 console.log(questionList[currentQuestion].correctAnswer);
 
 //add event listener to paddle out button
@@ -131,8 +134,26 @@ nextButton.addEventListener('click', handleNextButton);
 
 //create callback function for lets play button
 function handleNextButton() {
+  //reset isQuestionAnswered so user can click any button
   isQuestionAnswered = false;
-  //increment currentQuestion value
-  currentQuestion += 1;
-  handleLetsPlayButton();
+
+  //remove results paragraph
+  answerParagraph.innerText = '';
+
+  //suppress nextButton
+  document.body.removeChild(nextButton);
+
+  if (currentQuestion < 5) {
+    //increment currentQuestion value
+    currentQuestion += 1;
+    //call lets play function
+    handleLetsPlayButton();
+  } else {
+    document.body.removeChild(buttonA);
+    document.body.removeChild(buttonB);
+    document.body.removeChild(buttonC);
+    document.body.appendChild(thanksForPlaying);
+    document.querySelector('.question').innerHTML = '';
+  }
 }
+//all done message...if currentQuestion = questionList.length then display message

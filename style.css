@@ -10,13 +10,13 @@ Questions for office hours:
 .rips {
   color: blue;
   flex-direction: column;
-  float: left;
+  /* float: left; */
 }
 
 .wipeouts {
   color: orchid;
   flex-direction: column;
-  float: right;
+  /* float: right; */
 }
 .letsPlay {
 }
@@ -35,4 +35,6 @@ Questions for office hours:
 
 body {
   font-family: 'Original Surfer', cursive;
+  /* background-image: url('/images/roman-raizen-1B-v3DikGL4-unsplash.jpg');
+  background-size: 300px; */
 }
