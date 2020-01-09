@@ -9,11 +9,12 @@ Image Placeholder
 
 #### Getting Started
 
-I created a Trello board for the project to capture tasks, requirements, **user stories**, and to track my progress.
+I created a Trello board for the project to capture tasks, requirements, deliverables, **user stories**, and to track my progress. ..
+![GA SEIR 129 Project 1 Trello Board](/images/trello_board.png)
 
 #### Mockups
 
-I sketched mockups by hand using a paper pad with an iPhone template.
+Following the principal of responsive design to start with the smallest target screen, I sketched mockups by hand using a paper pad with an iPhone template.
 ![Hand-sketched mockups](/images/IMG_6314.jpg)
 
 Then, I created mockups using Adobe XD where I added more details, including a home page and future improvements to the Question page.
