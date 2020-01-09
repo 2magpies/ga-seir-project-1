@@ -1,11 +1,22 @@
 ## Project 1: Surfer Trivia Game
 
+A game of who, what, where for surfer geeks!..
+May you rip long!
+
 ### Description
+
+**_Surfer Triva_** is designed to test your knowledge of surfing history, technology, competition rules, and locales.
 
 Image Placeholder
 ![Catch a wave!](link goes here)
 
-### Design Process
+### Process Journal
+
+#### Project Decision
+
+The trivia option appealed to me because it is very similar to a social app I designed for a class project when I was studying Human-Computer Interaction (HCI) at Iowa State. The app (theBridge) uses contemporary trivia (events from 40 - 70 years ago) to help senior adults connect with each other. I am hopeful that the code I create for the SEIR Project 1 trivia game will give me ideas, maybe even actual code snippets, to use if when I am ready to build theBridge.
+
+The surfing trivia idea came to me while I was going through photos from my holidays the previous week. I had the opportunity over winter break to drive down the Pacific Coast Highway in California where I took beach photos, many of which included surfers. I'm an island girl that has not surfed in years. So, the subject is a nostalgic one for me. I get to _hang loose_ while I code.
 
 #### Getting Started
 
