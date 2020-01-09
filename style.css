@@ -1,40 +1,74 @@
-/*
-Questions for office hours:
-1. ...?
-*/
-.score {
-  font-size: 10pt;
-  color: crimson;
+body {
+  font-family: 'Original Surfer', cursive;
+  color: rgb(141, 145, 145);
+  background-color: #c6dbe3;
+  background-image: url('/images/roman-raizen-1B-v3DikGL4-unsplash.jpg');
+  background-size: 360px 640px;
+}
+
+header {
+  font-size: 30pt;
+  color: rgb(141, 145, 145);
+  display: flex;
+  justify-content: center;
+}
+
+.scoreBoard {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  color: rgb(141, 145, 145);
 }
 
 .rips {
-  color: blue;
-  flex-direction: column;
-  /* float: left; */
+  /* color: rgb(29, 184, 245); */
+  padding: 10px;
 }
 
 .wipeouts {
-  color: orchid;
-  flex-direction: column;
-  /* float: right; */
+  /* color: orchid; */
+  padding: 10px;
 }
+
 .letsPlay {
-}
-
-.question {
-}
-
-.buttonA {
-}
-
-.buttonB {
-}
-
-.buttonC {
-}
-
-body {
   font-family: 'Original Surfer', cursive;
-  /* background-image: url('/images/roman-raizen-1B-v3DikGL4-unsplash.jpg');
-  background-size: 300px; */
+  font-size: 14pt;
+  background-color: rgb(16, 231, 231);
+  color: white;
+  border-radius: 10px;
+  flex-grow: 1;
+}
+
+.letsPlay:hover {
+  cursor: pointer;
+}
+
+.qAndA {
+  display: flex;
+  justify-content: space-evenly;
+}
+.question {
+  font-family: 'Original Surfer', cursive;
+  font-size: 14pt;
+  color: rgb(141, 145, 145);
+}
+
+.results {
+}
+
+.buttons {
+  font-family: 'Original Surfer', cursive;
+  background-color: white;
+  color: lightseagreen;
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nextButton {
+  font-family: 'Original Surfer', cursive;
+  font-size: 14pt;
+  background-color: rgb(16, 231, 231);
+  color: white;
+  border-radius: 10px;
 }

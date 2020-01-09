@@ -1,12 +1,8 @@
-// Add something to console for warm and fuzzy feeling
-console.log('warm and fuzzy feelings');
-
-//Referred to w3schools, MDN, labs, homework, GA SEIR 129 cohort teachers
+//Referred to w3schools, MDN, labs, homework, GA SEIR 129 cohort teachers, and classmates
 
 //select elements from html
 const letsPlayButton = document.querySelector('.letsPlay');
 console.log(letsPlayButton);
-//consider using html for score keeper elements
 
 let currentQuestion = 0;
 let isQuestionAnswered = false;
@@ -20,9 +16,8 @@ const answerParagraph = document.createElement('p');
 
 const nextButton = document.createElement('button');
 nextButton.innerText = 'Paddle Out';
+nextButton.classList.add('nextButton');
 
-let scoreKeeperRips = document.createElement('p');
-scoreKeeperRips.innerHTML = 'Rips: ' + score.rips;
 const thanksForPlaying = document.createElement('p');
 thanksForPlaying.innerText = 'Thanks for playing!';
 
@@ -81,7 +76,7 @@ buttonC.addEventListener('click', checkAnswer);
 //create callback function for lets play button
 function handleLetsPlayButton() {
   // remove end of game message from previous game
-  document.body.removeChild(thanksForPlaying);
+  //document.body.removeChild(thanksForPlaying);
 
   //return a question
   document.querySelector('.question').innerHTML =
@@ -90,12 +85,15 @@ function handleLetsPlayButton() {
   // add element buttons and event listener fo each answer
   buttonA.innerHTML = questionList[currentQuestion].answerA;
   document.body.appendChild(buttonA);
+  buttonA.classList.add('buttons');
 
   buttonB.innerHTML = questionList[currentQuestion].answerB;
   document.body.appendChild(buttonB);
+  buttonB.classList.add('buttons');
 
   buttonC.innerHTML = questionList[currentQuestion].answerC;
   document.body.appendChild(buttonC);
+  buttonC.classList.add('buttons');
 }
 
 //CREATE LOGIC TO HANDLE ANSWER
@@ -115,7 +113,8 @@ function checkAnswer(event) {
       answerParagraph.innerText = 'Awesome! Way to rip!';
       //update object for counting correct answers
       score.rips += 1;
-      //document.body.appendChild(scoreKeeperRips);
+      let scoreKeeperRips = document.querySelector('.rips');
+      scoreKeeperRips.innerText = `Rips: ${score.rips}`;
     } else {
       answerParagraph.innerText =
         'Wipe out! Sorry, braugh. Correct answer is ' +
@@ -123,6 +122,8 @@ function checkAnswer(event) {
         '.';
       //update object for counting correct answers
       score.wipeouts += 1;
+      let scoreKeeperWipeouts = document.querySelector('.wipeouts');
+      scoreKeeperWipeouts.innerText = `Wipeouts: ${score.wipeouts}`;
     }
   }
   console.log(score);

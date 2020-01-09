@@ -66,10 +66,21 @@ Not all of my challenges were code related. Here's a short list of other helpful
 
 ### Current Features
 
+The bronze version prompts the user to answer surfing-related questions. Users receive a point
+
 ### Technologies Used
 
 HTML, CSS, Javascript
 
-### Installation Instructions
+### How to Play
+
+Open this link in your browser: https://2magpies.github.io/ga-seir-project-1/  
+Click the **Let's Play** button.  
+Choose the answer you think is correct.
+If you answer correctly, you score a Rip. If you answer incorrectly, you score a Wipeout. Correct answers are provided so you learn along the way.  
+#####Surfer Lingo
+Definitions provided by https://www.surfertoday.com/surfing/the-glossary-of-surfing-terms
+Rip - to surf very well
+Wipeout - an unexpected fall off a surfboard while surfing a wave, or surf accident
 
 ### Contribute
