@@ -59,6 +59,11 @@ My testing revealed some ugly behaviors, but since I had all of the initial requ
 
 Not all of my challenges were code related. Here's a short list of other helpful experiences from this project:
 
+- Name projects in github in lower case.
+- Learn how to sync origin and master. (More importantly, avoid needing to sync)
+- Do not snack all day or night while you code. Stop and eat a real meal.
+- Use images that I create or gather from websites that include permissions, such as unsplash.com
+
 ### Current Features
 
 ### Technologies Used
