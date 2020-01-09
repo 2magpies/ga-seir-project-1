@@ -3,21 +3,26 @@ console.log('warm and fuzzy feelings');
 
 //Referred to w3schools, MDN, labs, homework, GA SEIR 129 cohort teachers
 
-//GRAB A QUESTION FROM ARRAY
+//select elements from html
+const letsPlayButton = document.querySelector('.letsPlay');
+console.log(letsPlayButton);
+//consider using html for score keeper elements
 
 let currentQuestion = 0;
 let isQuestionAnswered = false;
 let score = { rips: 0, wipeouts: 0 };
-let scoreKeeperRips = document.createElement('p');
-scoreKeeperRips.innerHTML = 'Rips: ' + score.rips;
 
+//create objects for elements to create in js
 const buttonA = document.createElement('button');
 const buttonB = document.createElement('button');
 const buttonC = document.createElement('button');
 const answerParagraph = document.createElement('p');
+
 const nextButton = document.createElement('button');
 nextButton.innerText = 'Paddle Out';
 
+let scoreKeeperRips = document.createElement('p');
+scoreKeeperRips.innerHTML = 'Rips: ' + score.rips;
 const thanksForPlaying = document.createElement('p');
 thanksForPlaying.innerText = 'Thanks for playing!';
 
@@ -63,38 +68,34 @@ const questionList = [
     answerA: 'Griffith University (Australia)',
     answerB: 'John Hopkins University (USA)',
     answerC: 'Plymouth University (UK)',
-    correctAnswer: 'Greg Noll'
+    correctAnswer: 'Plymouth University (UK)'
   }
 ];
-//select Let's Play button
-const letsPlayButton = document.querySelector('.letsPlay');
-console.log(letsPlayButton);
 
-//add event listener to lets play button
+//add event listeners for calls to action
 letsPlayButton.addEventListener('click', handleLetsPlayButton);
+buttonA.addEventListener('click', checkAnswer);
+buttonB.addEventListener('click', checkAnswer);
+buttonC.addEventListener('click', checkAnswer);
 
 //create callback function for lets play button
 function handleLetsPlayButton() {
+  // remove end of game message from previous game
+  document.body.removeChild(thanksForPlaying);
+
   //return a question
   document.querySelector('.question').innerHTML =
     questionList[currentQuestion].question;
-  // var questionItem = document.createElement('p');
-  // questionItem.innerHTML = questionList[currentQuestion].question;
-  // document.body.appendChild(questionItem);
 
   // add element buttons and event listener fo each answer
-
   buttonA.innerHTML = questionList[currentQuestion].answerA;
   document.body.appendChild(buttonA);
-  buttonA.addEventListener('click', checkAnswer);
 
   buttonB.innerHTML = questionList[currentQuestion].answerB;
   document.body.appendChild(buttonB);
-  buttonB.addEventListener('click', checkAnswer);
 
   buttonC.innerHTML = questionList[currentQuestion].answerC;
   document.body.appendChild(buttonC);
-  buttonC.addEventListener('click', checkAnswer);
 }
 
 //CREATE LOGIC TO HANDLE ANSWER
