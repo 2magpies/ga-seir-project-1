@@ -10,6 +10,7 @@ header {
   display: flex;
   justify-content: center;
 }
+
 p {
   display: flex;
   justify-content: center;
@@ -28,12 +29,10 @@ p {
 }
 
 .rips {
-  /* color: rgb(29, 184, 245); */
   padding: 10px;
 }
 
 .wipeouts {
-  /* color: orchid; */
   padding: 10px;
 }
 
@@ -57,11 +56,6 @@ button:hover {
   cursor: not-allowed;
 }
 
-.qAndA {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
 .question {
   font-family: 'Original Surfer', cursive;
   font-size: 14pt;
@@ -71,8 +65,6 @@ button:hover {
   font-family: 'Original Surfer', cursive;
   font-size: 14pt;
   color: rgb(141, 145, 145);
-  display: flex;
-  align-self: auto 0;
 }
 
 .buttons {
