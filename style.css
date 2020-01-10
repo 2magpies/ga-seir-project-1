@@ -92,7 +92,7 @@ button:hover {
 .startOverButton {
   font-family: 'Original Surfer', cursive;
   font-size: 14pt;
-  background-color: rgb(238, 240, 240);
+  background-color: rgb(198, 202, 202);
   color: white;
   border-radius: 10px;
   display: flex;

@@ -70,7 +70,8 @@ The bronze version prompts the user to answer surfing-related questions. Users r
 
 ### Technologies Used
 
-Project management and planning were managed using Trello. Design included putting pencil to paper, and then, Adobe XD.
+Project management and planning were managed using Trello.  
+Design included putting pencil to paper, and then, Adobe XD.  
 The app is coded entirely in HTML, CSS, and Javascript.
 
 ### How to Play
@@ -83,7 +84,7 @@ The app is coded entirely in HTML, CSS, and Javascript.
 ##### Surfer Lingo
 
 Definitions provided by https://www.surfertoday.com/surfing/the-glossary-of-surfing-terms  
-**Rip** - to surf very well
+**Rip** - to surf very well  
 **Wipeout** - an unexpected fall off a surfboard while surfing a wave, or surf accident
 
 ### Questions / Advice
