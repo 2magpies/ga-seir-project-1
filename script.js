@@ -96,6 +96,7 @@ function handleLetsPlayButton() {
 
   //deactivate Let's Play button
   document.getElementById('play').disabled = true;
+  document.getElementById('play').classList.add('disabled');
 }
 
 //CREATE FUNCTION TO CHECK ANSWER
@@ -165,6 +166,7 @@ function handleNextButton() {
 
     //reactivate Let's Play button
     document.getElementById('play').disabled = false;
+    document.getElementById('play').classList.remove('disabled');
     currentQuestion = 0;
   }
   console.log(currentQuestion);
