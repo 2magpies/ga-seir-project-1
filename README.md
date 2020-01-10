@@ -8,7 +8,7 @@ _May you rip long!_
 **_Surfer Triva_** is designed to test your knowledge of surfing history, technology, competition rules, and locales.
 
 Image Placeholder
-![Surfer Trivia](/images/Surfer_Trivia.png)
+![Surfer Trivia](/images/Surfer-trivia.png)
 
 ### Process Journal
 
