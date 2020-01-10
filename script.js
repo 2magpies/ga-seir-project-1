@@ -120,7 +120,6 @@ function checkAnswer(event) {
   //check if question is answered
   if (isQuestionAnswered === false) {
     isQuestionAnswered = true;
-    console.log(event.target.innerText);
 
     //show results
     document.body.appendChild(answerParagraph);
