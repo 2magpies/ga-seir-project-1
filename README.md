@@ -1,7 +1,7 @@
 ## Project 1: Surfer Trivia Game
 
 A game of who, what, where for surfer geeks!  
-May you rip long!
+_May you rip long!_
 
 ### Description
 

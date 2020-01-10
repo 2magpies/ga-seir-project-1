@@ -14,7 +14,6 @@ header {
 .footer {
   position: fixed;
   bottom: 2px;
-
 }
 
 .scoreBoard {
@@ -40,7 +39,9 @@ button {
   background-color: rgb(16, 231, 231);
   color: white;
   border-radius: 10px;
-  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
 }
 
 button:hover {
@@ -90,7 +91,7 @@ button:hover {
   margin: 0 auto;
 }
 html {
-  background: url(/images/roman-raizen-1B-v3DikGL4-unsplash.jpg) no-repeat
+  background: url('./images/roman-raizen-1B-v3DikGL4-unsplash.jpg') no-repeat
     center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
