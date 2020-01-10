@@ -10,6 +10,10 @@ header {
   display: flex;
   justify-content: center;
 }
+p {
+  display: flex;
+  justify-content: center;
+}
 
 .footer {
   position: fixed;
@@ -67,6 +71,8 @@ button:hover {
   font-family: 'Original Surfer', cursive;
   font-size: 14pt;
   color: rgb(141, 145, 145);
+  display: flex;
+  align-self: auto 0;
 }
 
 .buttons {
