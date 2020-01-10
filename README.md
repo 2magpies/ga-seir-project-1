@@ -1,6 +1,6 @@
 ## Project 1: Surfer Trivia Game
 
-A game of who, what, where for surfer geeks!..
+A game of who, what, where for surfer geeks!  
 May you rip long!
 
 ### Description
@@ -16,11 +16,11 @@ Image Placeholder
 
 The trivia option appealed to me because it is very similar to a social app I designed for a class project when I was studying Human-Computer Interaction (HCI) at Iowa State. The app (theBridge) uses contemporary trivia (events from 40 - 70 years ago) to help senior adults connect with each other. I am hopeful that the code I create for the SEIR Project 1 trivia game will give me ideas, maybe even actual code snippets, to use if when I am ready to build theBridge.
 
-The surfing trivia idea came to me while I was going through photos from my holidays the previous week. I had the opportunity over winter break to drive down the Pacific Coast Highway in California where I took beach photos, many of which included surfers. I'm an island girl that has not surfed in years. So, the subject is a nostalgic one for me. I get to _hang loose_ while I code.
+The **surfing** trivia idea came to me while I was going through photos from my holidays the previous week. I had the opportunity over winter break to drive down the Pacific Coast Highway in California where I took beach photos, many of which included surfers. I'm an island girl that has not surfed in years. So, the subject is a nostalgic one for me. I get to _hang loose_ while I code.
 
 #### Getting Started
 
-I created a Trello board for the project to capture tasks, requirements, deliverables, **user stories**, and to track my progress. ..
+I created a Trello board for the project to capture tasks, requirements, deliverables, **user stories**, and to track my progress.
 ![GA SEIR 129 Project 1 Trello Board](/images/trello_board.png)
 
 #### Mockups
@@ -70,15 +70,18 @@ The bronze version prompts the user to answer surfing-related questions. Users r
 
 ### Technologies Used
 
-HTML, CSS, Javascript
+Project management and planning were managed using Trello. Design included putting pencil to paper, and then, Adobe XD.
+The app is coded entirely in HTML, CSS, and Javascript.
 
 ### How to Play
 
-Open this link in your browser: https://2magpies.github.io/ga-seir-project-1/  
-Click the **Let's Play** button.  
-Choose the answer you think is correct.
-If you answer correctly, you score a Rip. If you answer incorrectly, you score a Wipeout. Correct answers are provided so you learn along the way.  
-#####Surfer Lingo
+1. Open this link in your browser: https://2magpies.github.io/ga-seir-project-1/
+2. Click the **Let's Play** button.
+3. Choose the answer you think is correct.
+   If you answer correctly, you score a Rip. If you answer incorrectly, you score a Wipeout. Correct answers are provided so you learn along the way.
+
+##### Surfer Lingo
+
 Definitions provided by https://www.surfertoday.com/surfing/the-glossary-of-surfing-terms
 Rip - to surf very well
 Wipeout - an unexpected fall off a surfboard while surfing a wave, or surf accident
