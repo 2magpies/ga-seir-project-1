@@ -200,14 +200,38 @@ function restartGame() {
   }
   console.log(score);
 }
-//provide option to quit
+//CREATE STARTOVER FUNCTION to handle head to shore button
+//add event listener to start ove button (head to shore)
+startOverButton.addEventListener('click', headToShoreButton);
+
+function headToShoreButton() {
+  //call restart function
+  restartGame();
+
+  //reactivate Let's Play button
+  document.getElementById('play').disabled = false;
+  document.getElementById('play').classList.remove('disabled');
+  currentQuestion = 0;
+  //remove results paragraph
+  answerParagraph.innerText = '';
+
+  //suppress nextButton and startOverButton
+  document.body.removeChild(nextButton);
+  document.body.removeChild(startOverButton);
+  //reset isQuestionAnswered
+  isQuestionAnswered = false;
+  //display a question
+  document.querySelector('.question').innerHTML = '';
+}
 
 //add image hints - silver
 
 //support two players - silver
 
+//change background image with each round - silver
+
+//support levels: round 1 trophy, round 2 trophy
+
 //add rip images when answer is correct - gold
 
 //add wipe out images when answer is incorrect - gold
-
-//change background image with each round

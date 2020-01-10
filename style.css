@@ -29,11 +29,11 @@ p {
 }
 
 .rips {
-  padding: 10px;
+  padding-right: 10px;
 }
 
 .wipeouts {
-  padding: 10px;
+  padding-right: 10px;
 }
 
 button {
@@ -97,7 +97,7 @@ button:hover {
   border-radius: 10px;
   display: flex;
   align-items: center;
-  margin: 0 auto;
+  margin: 15px auto;
 }
 
 html {
