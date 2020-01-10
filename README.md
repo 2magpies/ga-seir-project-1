@@ -78,12 +78,12 @@ The app is coded entirely in HTML, CSS, and Javascript.
 1. Open this link in your browser: https://2magpies.github.io/ga-seir-project-1/
 2. Click the **Let's Play** button.
 3. Choose the answer you think is correct.
-   If you answer correctly, you score a Rip. If you answer incorrectly, you score a Wipeout. Correct answers are provided so you learn along the way.
+   If you answer correctly, you score a **Rip**. If you answer incorrectly, you score a **Wipeout**. Correct answers are provided so you learn along the way.
 
 ##### Surfer Lingo
 
-Definitions provided by https://www.surfertoday.com/surfing/the-glossary-of-surfing-terms
-Rip - to surf very well
-Wipeout - an unexpected fall off a surfboard while surfing a wave, or surf accident
+Definitions provided by https://www.surfertoday.com/surfing/the-glossary-of-surfing-terms  
+**Rip** - to surf very well
+**Wipeout** - an unexpected fall off a surfboard while surfing a wave, or surf accident
 
 ### Contribute
