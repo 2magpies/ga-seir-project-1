@@ -13,7 +13,6 @@ let scoreKeeperWipeouts = document.querySelector('.wipeouts');
 
 //select Let's Play button
 const letsPlayButton = document.querySelector('.letsPlay');
-console.log(letsPlayButton);
 
 //create objects for possible answers
 const buttonA = document.createElement('button');
@@ -154,10 +153,7 @@ function checkAnswer(event) {
       scoreKeeperWipeouts.innerText = `Wipeouts: ${score.wipeouts}`;
     }
   }
-  console.log(score);
 }
-
-console.log(questionList[currentQuestion].correctAnswer);
 
 //CREATE FUNCTION FOR PADDLE OUT (AKA NEXT) BUTTON
 function handleNextButton() {
@@ -186,7 +182,6 @@ function handleNextButton() {
     document.getElementById('play').classList.remove('disabled');
     currentQuestion = 0;
   }
-  console.log(currentQuestion);
 }
 //CREATE RESTART FUNCTION to remove thanks for playing and reset score
 letsPlayButton.addEventListener('click', restartGame);
@@ -198,7 +193,6 @@ function restartGame() {
     score.wipeouts = 0;
     scoreKeeperWipeouts.innerText = `Wipeouts: ${score.wipeouts}`;
   }
-  console.log(score);
 }
 //CREATE STARTOVER FUNCTION to handle head to shore button
 //add event listener to start ove button (head to shore)
@@ -223,15 +217,3 @@ function headToShoreButton() {
   //display a question
   document.querySelector('.question').innerHTML = '';
 }
-
-//add image hints - silver
-
-//support two players - silver
-
-//change background image with each round - silver
-
-//support levels: round 1 trophy, round 2 trophy
-
-//add rip images when answer is correct - gold
-
-//add wipe out images when answer is incorrect - gold
