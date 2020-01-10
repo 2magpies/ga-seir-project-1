@@ -86,4 +86,7 @@ Definitions provided by https://www.surfertoday.com/surfing/the-glossary-of-surf
 **Rip** - to surf very well
 **Wipeout** - an unexpected fall off a surfboard while surfing a wave, or surf accident
 
-### Contribute
+### Questions / Advice
+
+1. What are some best practices for trying new ideas in code that works?
+2. I designed the project using the concept of pages (Home, Question, Results). I think that with the lessons we've had so far could, I may have been able to create the experience to look like different pages were being used. So, my question is: are pages a thing?

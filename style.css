@@ -88,6 +88,18 @@ button:hover {
   align-items: center;
   margin: 0 auto;
 }
+
+.startOverButton {
+  font-family: 'Original Surfer', cursive;
+  font-size: 14pt;
+  background-color: rgb(238, 240, 240);
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
 html {
   background: url('./images/roman-raizen-1B-v3DikGL4-unsplash.jpg') no-repeat
     center center fixed;
