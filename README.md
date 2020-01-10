@@ -88,5 +88,5 @@ Definitions provided by https://www.surfertoday.com/surfing/the-glossary-of-surf
 
 ### Questions / Advice
 
-1. What are some best practices for trying new ideas in code that works?
-2. I designed the project using the concept of pages (Home, Question, Results). I think that with the lessons we've had so far could, I may have been able to create the experience to look like different pages were being used. So, my question is: are pages a thing?
+1. What are some best practices to avoid breaking code that works when you're trying new ideas?
+2. If I add levels, (i.e., answer all questions in level one correctly; then, move to level two), should I add a property to a question that indicates level, OR, should I have separate objects (Level One object, Level Two object) to organize the questions?
