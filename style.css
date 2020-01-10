@@ -1,9 +1,7 @@
+/* referred to css-tricks.com and w3schools.com; received guidance from classmates and advisors  */
 body {
   font-family: 'Original Surfer', cursive;
   color: rgb(141, 145, 145);
-  background-color: #c6dbe3;
-  background-image: url('/images/roman-raizen-1B-v3DikGL4-unsplash.jpg');
-  background-size: 360px 640px;
 }
 
 header {
@@ -11,6 +9,12 @@ header {
   color: rgb(141, 145, 145);
   display: flex;
   justify-content: center;
+}
+
+.footer {
+  position: fixed;
+  bottom: 2px;
+
 }
 
 .scoreBoard {
@@ -30,7 +34,7 @@ header {
   padding: 10px;
 }
 
-.letsPlay {
+button {
   font-family: 'Original Surfer', cursive;
   font-size: 14pt;
   background-color: rgb(16, 231, 231);
@@ -39,30 +43,40 @@ header {
   flex-grow: 1;
 }
 
-.letsPlay:hover {
+button:hover {
   cursor: pointer;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .qAndA {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
 }
 .question {
   font-family: 'Original Surfer', cursive;
   font-size: 14pt;
   color: rgb(141, 145, 145);
 }
-
 .results {
+  font-family: 'Original Surfer', cursive;
+  font-size: 14pt;
+  color: rgb(141, 145, 145);
 }
 
 .buttons {
   font-family: 'Original Surfer', cursive;
+  font-size: 12pt;
   background-color: white;
   color: lightseagreen;
   border-radius: 50px;
   display: flex;
   justify-content: space-evenly;
+  margin: 0 auto;
 }
 
 .nextButton {
@@ -71,4 +85,15 @@ header {
   background-color: rgb(16, 231, 231);
   color: white;
   border-radius: 10px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+html {
+  background: url(/images/roman-raizen-1B-v3DikGL4-unsplash.jpg) no-repeat
+    center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }

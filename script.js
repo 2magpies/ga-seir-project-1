@@ -13,6 +13,8 @@ const buttonA = document.createElement('button');
 const buttonB = document.createElement('button');
 const buttonC = document.createElement('button');
 const answerParagraph = document.createElement('p');
+let scoreKeeperRips = document.querySelector('.rips');
+let scoreKeeperWipeouts = document.querySelector('.wipeouts');
 
 const nextButton = document.createElement('button');
 nextButton.innerText = 'Paddle Out';
@@ -73,11 +75,8 @@ buttonA.addEventListener('click', checkAnswer);
 buttonB.addEventListener('click', checkAnswer);
 buttonC.addEventListener('click', checkAnswer);
 
-//create callback function for lets play button
+//CREATE CALLBACK FUNCTION FOR LET'S PLAY BUTTON
 function handleLetsPlayButton() {
-  // remove end of game message from previous game
-  //document.body.removeChild(thanksForPlaying);
-
   //return a question
   document.querySelector('.question').innerHTML =
     questionList[currentQuestion].question;
@@ -94,35 +93,44 @@ function handleLetsPlayButton() {
   buttonC.innerHTML = questionList[currentQuestion].answerC;
   document.body.appendChild(buttonC);
   buttonC.classList.add('buttons');
+
+  //deactivate Let's Play button
+  document.getElementById('play').disabled = true;
 }
 
-//CREATE LOGIC TO HANDLE ANSWER
-
-// create function to check if answer is correct: innerHTML of clicked button === correctAnswer
+//CREATE FUNCTION TO CHECK ANSWER
 
 function checkAnswer(event) {
   if (isQuestionAnswered === false) {
     isQuestionAnswered = true;
     console.log(event.target.innerText);
+
     document.body.appendChild(answerParagraph);
     document.body.appendChild(nextButton);
+    document.body.removeChild(buttonA);
+    document.body.removeChild(buttonB);
+    document.body.removeChild(buttonC);
 
     if (
       event.target.innerText === questionList[currentQuestion].correctAnswer
     ) {
-      answerParagraph.innerText = 'Awesome! Way to rip!';
+      //display correct answer message
+      answerParagraph.innerText =
+        'Awesome! Way to rip! You got the correct answer, ' +
+        questionList[currentQuestion].correctAnswer +
+        '.';
+
       //update object for counting correct answers
       score.rips += 1;
-      let scoreKeeperRips = document.querySelector('.rips');
       scoreKeeperRips.innerText = `Rips: ${score.rips}`;
     } else {
       answerParagraph.innerText =
         'Wipe out! Sorry, braugh. Correct answer is ' +
         questionList[currentQuestion].correctAnswer +
         '.';
+
       //update object for counting correct answers
       score.wipeouts += 1;
-      let scoreKeeperWipeouts = document.querySelector('.wipeouts');
       scoreKeeperWipeouts.innerText = `Wipeouts: ${score.wipeouts}`;
     }
   }
@@ -134,9 +142,9 @@ console.log(questionList[currentQuestion].correctAnswer);
 //add event listener to paddle out button
 nextButton.addEventListener('click', handleNextButton);
 
-//create callback function for lets play button
+//CREATE FUNCTION FOR PADDLE OUT (AKA NEXT) BUTTON
 function handleNextButton() {
-  //reset isQuestionAnswered so user can click any button
+  //reset isQuestionAnswered
   isQuestionAnswered = false;
 
   //remove results paragraph
@@ -148,14 +156,28 @@ function handleNextButton() {
   if (currentQuestion < 5) {
     //increment currentQuestion value
     currentQuestion += 1;
+
     //call lets play function
     handleLetsPlayButton();
   } else {
-    document.body.removeChild(buttonA);
-    document.body.removeChild(buttonB);
-    document.body.removeChild(buttonC);
     document.body.appendChild(thanksForPlaying);
     document.querySelector('.question').innerHTML = '';
+
+    //reactivate Let's Play button
+    document.getElementById('play').disabled = false;
+    currentQuestion = 0;
   }
+  console.log(currentQuestion);
 }
-//all done message...if currentQuestion = questionList.length then display message
+//handle second Let's Play round: remove thanks for playing and reset score
+letsPlayButton.addEventListener('click', restartGame);
+function restartGame() {
+  if (score.rips + score.wipeouts >= 1) {
+    thanksForPlaying.innerText = '';
+    score.rips = 0;
+    scoreKeeperRips.innerText = `Rips: ${score.rips}`;
+    score.wipeouts = 0;
+    scoreKeeperWipeouts.innerText = `Wipeouts: ${score.wipeouts}`;
+  }
+  console.log(score);
+}
