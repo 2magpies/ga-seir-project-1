@@ -1,46 +1,47 @@
 /* referred to css-tricks.com and w3schools.com; received guidance from classmates and advisors  */
+
+/* 
+Clean and simple!
+
+A couple of improvements...
+1. When you set the font-family in the body, you don't need to keep setting it elsewhere on the page unless you want to override it.  It'll save some keystrokes and make it easier later if you want to experiment with using different fonts.
+2. While technically you can use css lengths (units of measurement) that are holdover's from the days of printing such as pt, cm, in, etc., you should not, unless you are creating a print stylesheet. Change your font-sizes to use rem, em or px.
+3. Don't manually add prefixes to your CSS.  We have tooling to do this for us in our modern frameworks.  In the case of this project where we don't have those tools, you can check caniuse.com.  As for background-size specifically, it's been supported for nearly a decade in all browsers, so no need to prefix. https://caniuse.com/#search=background-size
+4. Given your background and love of design, you should definitely take the time to learn about CSS variables.  They will make it easier to set up a design system for consistency and also experiment with colors, borders, fonts, etc. more easily.
+5. Although it's true that we infrequently use a single CSS file like this in modern web development (you'll see more about this next week), it's considered best practice to organize your CSS as follows:
+
+  1. @imports/@font-face 
+  2. :root selector
+  3. * (universal) selector
+  4. tag selectors (in alphabetical order)
+  5. class selectors (in alphabetical order)
+  6. attribute selectors (in alphabetical order)
+  7. id selectors (avoid but alphabetize if used)
+  8. media queries (in ascending width order)
+  9. keyframe animations (in alphabetical order)
+
+In addition to organizing the selectors alphabetically, it's also best practice to organize the properties inside of each declaration in alphabetical order.  
+
+The reason for this is two fold, the order means you're always working with the cascading nature of CSS instead of against it and the alphabetizing means no one on the team needs to memorize a special system to be able to find where something is in the file or declaration because everyone knows their ABCs 😉.
+*/
+
+:root {
+  --gray: rgb(141, 145, 145);
+  --light-gray: rgb(198, 202, 202);
+  --seagreen: rgb(32, 178, 170);
+  --turquoise: rgb(16, 231, 231);
+  --white: rgb(255, 255, 255);
+}
+
 body {
   font-family: 'Original Surfer', cursive;
-  color: rgb(141, 145, 145);
-}
-
-header {
-  font-size: 30pt;
-  color: rgb(141, 145, 145);
-  display: flex;
-  justify-content: center;
-}
-
-p {
-  display: flex;
-  justify-content: center;
-}
-
-.footer {
-  position: fixed;
-  bottom: 2px;
-}
-
-.scoreBoard {
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
-  color: rgb(141, 145, 145);
-}
-
-.rips {
-  padding-right: 10px;
-}
-
-.wipeouts {
-  padding-right: 10px;
+  color: var(--gray);
 }
 
 button {
-  font-family: 'Original Surfer', cursive;
-  font-size: 14pt;
-  background-color: rgb(16, 231, 231);
-  color: white;
+  font-size: 1.35rem;
+  background-color: var(--turquoise);
+  color: var(--white);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -51,60 +52,84 @@ button:hover {
   cursor: pointer;
 }
 
-.disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+header {
+  font-size: 2rem;
+  color: var(--gray);
+  display: flex;
+  justify-content: center;
 }
 
-.question {
-  font-family: 'Original Surfer', cursive;
-  font-size: 14pt;
-  color: rgb(141, 145, 145);
+html {
+  background: url('./images/roman-raizen-1B-v3DikGL4-unsplash.jpg') no-repeat
+    center/cover fixed;
 }
-.results {
-  font-family: 'Original Surfer', cursive;
-  font-size: 14pt;
-  color: rgb(141, 145, 145);
+
+p {
+  display: flex;
+  justify-content: center;
 }
 
 .buttons {
-  font-family: 'Original Surfer', cursive;
-  font-size: 12pt;
-  background-color: white;
-  color: lightseagreen;
+  font-size: 1rem;
+  background-color: var(--white);
+  color: var(--seagreen);
   border-radius: 50px;
   display: flex;
   justify-content: space-evenly;
   margin: 0 auto;
 }
 
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.footer {
+  position: fixed;
+  bottom: 2px;
+}
+
 .nextButton {
-  font-family: 'Original Surfer', cursive;
-  font-size: 14pt;
-  background-color: rgb(16, 231, 231);
-  color: white;
+  font-size: 1.35rem;
+  background-color: var(--turquoise);
+  color: var(--white);
   border-radius: 10px;
   display: flex;
   align-items: center;
   margin: 0 auto;
 }
 
+.question {
+  font-size: 1.35rem;
+  color: var(--gray);
+}
+
+.results {
+  font-size: 1.35rem;
+  color: var(--gray);
+}
+
+.rips {
+  padding-right: 10px;
+}
+
+.scoreBoard {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  color: var(--gray);
+}
+
 .startOverButton {
-  font-family: 'Original Surfer', cursive;
-  font-size: 14pt;
-  background-color: rgb(198, 202, 202);
-  color: white;
+  font-size: 1.35rem;
+  background-color: var(--light-gray);
+  color: var(--white);
   border-radius: 10px;
   display: flex;
   align-items: center;
   margin: 15px auto;
 }
 
-html {
-  background: url('./images/roman-raizen-1B-v3DikGL4-unsplash.jpg') no-repeat
-    center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+.wipeouts {
+  padding-right: 10px;
 }

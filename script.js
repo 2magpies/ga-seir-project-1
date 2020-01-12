@@ -1,42 +1,7 @@
-//Referred to w3schools, MDN, labs, homework, GA SEIR 129 cohort teachers, and classmates
+// JM: Really well done.  Nicely commented and it's clear that you grasped the important concepts from the lessons and we're able to fill in the blanks with Google!
 
-//add an object to identify the current question
-let currentQuestion = 0;
+// I've reorganized your code, which made it easier to see where things were redundant.  To be honest, as we begin using React from this point forward, there won't be occasions for you to write all of your code in one file any more and it's unlikely that you'll do this in a professional setting either.  Nonetheless, organizing your code so that all of the variables are defined first such that they will be available throughout the file, function, class or module, followed by your functions, followed by any listeners, can help to make it easier to write DRY code.
 
-//add object to indicate that an answer button has been clicked
-let isQuestionAnswered = false;
-
-//add object to track number of correct answers and number of incorrect answers
-let score = { rips: 0, wipeouts: 0 };
-let scoreKeeperRips = document.querySelector('.rips');
-let scoreKeeperWipeouts = document.querySelector('.wipeouts');
-
-//select Let's Play button
-const letsPlayButton = document.querySelector('.letsPlay');
-
-//create objects for possible answers
-const buttonA = document.createElement('button');
-const buttonB = document.createElement('button');
-const buttonC = document.createElement('button');
-
-//create object for results
-const answerParagraph = document.createElement('p');
-
-//create object for next button (Paddle Out)
-const nextButton = document.createElement('button');
-nextButton.innerText = 'Paddle Out';
-nextButton.classList.add('nextButton');
-
-//create object for start over button (Head to Shore)
-const startOverButton = document.createElement('button');
-startOverButton.innerText = 'Head to Shore';
-startOverButton.classList.add('startOverButton');
-
-//create object for end of game message
-const thanksForPlaying = document.createElement('p');
-thanksForPlaying.innerText = 'Thanks for playing!';
-
-//create list of questions and answers
 const questionList = [
   {
     question: 'Where was Duke Kahanamoku born?',
@@ -83,45 +48,64 @@ const questionList = [
   }
 ];
 
-//add event listeners to buttons
-letsPlayButton.addEventListener('click', handleLetsPlayButton);
-buttonA.addEventListener('click', checkAnswer);
-buttonB.addEventListener('click', checkAnswer);
-buttonC.addEventListener('click', checkAnswer);
-nextButton.addEventListener('click', handleNextButton);
+let currentQuestion = 0;
+let isQuestionAnswered = false;
 
-//CREATE CALLBACK FUNCTION FOR LET'S PLAY BUTTON
+// JM: No need to use `let` for any of these others.  The only time you need `let` is if you're going to reassign the variable.
+const score = { rips: 0, wipeouts: 0 };
+const scoreKeeperRips = document.querySelector('.rips');
+const scoreKeeperWipeouts = document.querySelector('.wipeouts');
+const letsPlayButton = document.querySelector('.letsPlay');
+const buttonA = document.createElement('button');
+const buttonB = document.createElement('button');
+const buttonC = document.createElement('button');
+const answerParagraph = document.createElement('p');
+const question = document.querySelector('.question');
+const nextButton = document.createElement('button');
+const startOverButton = document.createElement('button');
+const thanksForPlaying = document.createElement('p');
+const playBtn = document.getElementById('play');
+
+buttonA.classList.add('buttons');
+buttonB.classList.add('buttons');
+buttonC.classList.add('buttons');
+nextButton.innerText = 'Paddle Out';
+nextButton.classList.add('nextButton');
+startOverButton.innerText = 'Head to Shore';
+startOverButton.classList.add('startOverButton');
+thanksForPlaying.innerText = 'Thanks for playing!';
+
 function handleLetsPlayButton() {
-  //display a question
-  document.querySelector('.question').innerHTML =
-    questionList[currentQuestion].question;
-
-  // display buttons for each answer
+  // No need to add the classes over and over here.
+  // Just add them once when you initialize the page.
+  // Remember, you're not adding the class to the element on the page
+  // just the one in memory, so whether you remove it from the page or
+  // not, the class is still stored on the element in memory.
+  question.innerHTML = questionList[currentQuestion].question;
   buttonA.innerHTML = questionList[currentQuestion].answerA;
   document.body.appendChild(buttonA);
-  buttonA.classList.add('buttons'); //for style
 
   buttonB.innerHTML = questionList[currentQuestion].answerB;
   document.body.appendChild(buttonB);
-  buttonB.classList.add('buttons');
 
   buttonC.innerHTML = questionList[currentQuestion].answerC;
   document.body.appendChild(buttonC);
-  buttonC.classList.add('buttons');
 
-  //deactivate Let's Play button
-  document.getElementById('play').disabled = true;
-  document.getElementById('play').classList.add('disabled');
+  // You can just style the button when it's disabled instead of adding a special class here
+  // The selector you'd use in CSS is: button:disabled
+  playBtn.disabled = true;
+  playBtn.classList.add('disabled');
 }
 
-//CREATE FUNCTION TO CHECK ANSWER
-
 function checkAnswer(event) {
-  //check if question is answered
-  if (isQuestionAnswered === false) {
+  // JM: Rather than check if the value is equal to false
+  // you can shorten it up using the negation operator
+  // So now if the value is true, it's negated thus evaluates
+  // as false, so the code block is skipped. If it's false,
+  // the value is negated thus true and the code is run.
+  if (!isQuestionAnswered) {
     isQuestionAnswered = true;
 
-    //show results
     document.body.appendChild(answerParagraph);
     document.body.appendChild(nextButton);
     document.body.appendChild(startOverButton);
@@ -154,36 +138,25 @@ function checkAnswer(event) {
   }
 }
 
-//CREATE FUNCTION FOR PADDLE OUT (AKA NEXT) BUTTON
 function handleNextButton() {
-  //reset isQuestionAnswered
   isQuestionAnswered = false;
-
-  //remove results paragraph
   answerParagraph.innerText = '';
-
-  //suppress nextButton and startOverButton
   document.body.removeChild(nextButton);
   document.body.removeChild(startOverButton);
 
   if (currentQuestion < 5) {
-    //increment currentQuestion value
     currentQuestion += 1;
-
-    //call lets play function
+    //Good reuse of this function!
     handleLetsPlayButton();
   } else {
     document.body.appendChild(thanksForPlaying);
-    document.querySelector('.question').innerHTML = '';
-
-    //reactivate Let's Play button
-    document.getElementById('play').disabled = false;
-    document.getElementById('play').classList.remove('disabled');
+    question.innerHTML = '';
+    playBtn.disabled = false;
+    playBtn.classList.remove('disabled');
     currentQuestion = 0;
   }
 }
-//CREATE RESTART FUNCTION to remove thanks for playing and reset score
-letsPlayButton.addEventListener('click', restartGame);
+
 function restartGame() {
   if (score.rips + score.wipeouts >= 1) {
     thanksForPlaying.innerText = '';
@@ -193,26 +166,23 @@ function restartGame() {
     scoreKeeperWipeouts.innerText = `Wipeouts: ${score.wipeouts}`;
   }
 }
-//CREATE STARTOVER FUNCTION to handle head to shore button
-//add event listener to start ove button (head to shore)
-startOverButton.addEventListener('click', headToShoreButton);
 
 function headToShoreButton() {
-  //call restart function
   restartGame();
-
-  //reactivate Let's Play button
-  document.getElementById('play').disabled = false;
-  document.getElementById('play').classList.remove('disabled');
+  playBtn.disabled = false;
+  playBtn.classList.remove('disabled');
   currentQuestion = 0;
-  //remove results paragraph
   answerParagraph.innerText = '';
-
-  //suppress nextButton and startOverButton
   document.body.removeChild(nextButton);
   document.body.removeChild(startOverButton);
-  //reset isQuestionAnswered
   isQuestionAnswered = false;
-  //display a question
-  document.querySelector('.question').innerHTML = '';
+  question.innerHTML = '';
 }
+
+// It's much easier to have all of your event listners in one place at the bottom of the page.  Organizing it this way, it was immediately clear that you had accidentally had two handlers on the letsPlayButton.
+letsPlayButton.addEventListener('click', handleLetsPlayButton);
+nextButton.addEventListener('click', handleNextButton);
+startOverButton.addEventListener('click', headToShoreButton);
+buttonA.addEventListener('click', checkAnswer);
+buttonB.addEventListener('click', checkAnswer);
+buttonC.addEventListener('click', checkAnswer);
