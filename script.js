@@ -36,6 +36,13 @@ startOverButton.classList.add('startOverButton');
 const thanksForPlaying = document.createElement('p');
 thanksForPlaying.innerText = 'Thanks for playing!';
 
+//create object for photo credits
+const photoCred = [
+  {
+    photo1: 'Photo by roman raizen on Unsplash',
+    photo2: 'Photo by Morten Bonde on Unsplash'
+  }
+];
 //create list of questions and answers
 const questionList = [
   {
